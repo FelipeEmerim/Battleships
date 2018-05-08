@@ -2,48 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Battleships</title>
     <style>
-        #container{
-            display: grid;
-            grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
-            width: 800px;
+        button {
+            display: block;
+            margin-top: 20px;
         }
-        .fieldCell{
+        .self{
+            border: 5px solid tomato;
+        }
+        .container{
+            display: inline-grid;
+            grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+            width: 500px;
+            margin-left: 50px;
+        }
+        .fieldCell, .fieldCellSelf{
             box-sizing: border-box;
             border: 1px solid black;
-            width: 80px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: lightblue;
-
         }
-        .shotWater{
+        .fieldCellSelf:hover{
+            background: aqua;
+        }
+        .myBoat{
+            box-sizing: border-box;
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            background: teal;
+        }
+        .myBoat:hover{
+            background: midnightblue;
+        }
+        .shotWater, .shotWaterSelf{
             box-sizing: border-box;
             border: 1px solid black;
             color: white;
             background: blue;
-            width: 80px;
-            height: 60px;
-            font-size: 30px;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
             padding: 8px;
             text-align: center;
         }
-        .shotBoat{
+        .shotWaterSelf:hover{
+            background: navy;
+        }
+        .shotBoat, .shotBoatSelf{
             box-sizing: border-box;
             border: 1px solid black;
             color: black;
             background: red;
-            width: 80px;
-            height: 60px;
-            font-size: 30px;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
             padding: 8px;
             text-align: center;
+        }
+        .shotBoatSelf:hover{
+            background: maroon;
         }
     </style>
 </head>
 <body>
-    <div id = "container"></div>
-    <button onclick = "startGame(event)">Comecar</button>
+<div class = "container" id="user"></div>
+
+<div class = "container" id="computer"></div>
+<button id="start" onclick = "startGame(event)">Comecar</button>
+<button id="restart" style="display: none" onclick="cleanup()">Reiniciar</button>
 </body>
 <script src="BattleScript.js">
 </script>
