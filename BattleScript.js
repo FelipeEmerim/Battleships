@@ -13,9 +13,12 @@ function cleanup(){
 
     hits = 0;
     cpuHits = 0;
+	cpuBoats = 9; 
+	userBoats = 9;
 
     container.className = 'container';
     cpu.className = 'container';
+	cpu.style.pointerEvents = 'none';
 
     generateCpuBoats();
 
@@ -64,7 +67,7 @@ function randomBoat(){
 
     var rand = Math.random();
 
-    if(rand > 0.5){
+    if(rand > 0.9){
         cpuBoats--;
         return 1;
     }else return 0;
@@ -83,6 +86,8 @@ var cpuBoats = 9, userBoats = 9;
 cleanup();
 
 function startGame(event){
+	
+	cpu.style.pointerEvents = 'auto';
     requestUserBoats();
     container.style.pointerEvents = "auto";
     event.target.style.display = "none";
