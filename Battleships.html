@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+            width: 800px;
+        }
+        .fieldCell{
+            box-sizing: border-box;
+            border: 1px solid black;
+            width: 80px;
+            height: 60px;
+            background: lightblue;
+
+        }
+        .shotWater{
+            box-sizing: border-box;
+            border: 1px solid black;
+            color: white;
+            background: blue;
+            width: 80px;
+            height: 60px;
+            font-size: 30px;
+            padding: 8px;
+            text-align: center;
+        }
+        .shotBoat{
+            box-sizing: border-box;
+            border: 1px solid black;
+            color: black;
+            background: red;
+            width: 80px;
+            height: 60px;
+            font-size: 30px;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id = "container"></div>
+    <button onclick = "startGame(event)">Comecar</button>
+</body>
+<script src="BattleScript.js">
+</script>
+</html>
