@@ -7,6 +7,20 @@
 // 2 para tiro na água
 // 3 tiro em um barco
 
+
+const container = document.getElementById("user");
+const cpu = document.getElementById("computer");
+const BOATS = 9;
+
+container.style.pointerEvents = "none";
+
+let campo = [], cpuCampo = [];
+let hits, cpuHits;
+let cpuBoats = 9, userBoats = 9;
+
+cleanup();
+
+
 function cleanup(){
     container.innerHTML = '';
     cpu.innerHTML = '';
@@ -68,7 +82,7 @@ function generateCpuBoats(){
     for(let i = 0; i < 10; i++){
         for(let j = 0; j < 10; j++){
 
-            if (cpuCampo[i][j] !== 1) cpuCampo[i][j] = randomBoat(); //pode cair barco duas vezes no mesmo lugar
+            if (cpuCampo[i][j] !== 1) cpuCampo[i][j] = randomBoat();
         }
     }
 
@@ -78,25 +92,13 @@ function generateCpuBoats(){
 function randomBoat(){
     if(cpuBoats === 0) return 0;
 
-    var rand = Math.random();
+    let rand = Math.random();
 
     if(rand > 0.95){
         cpuBoats--;
         return 1;
     }else return 0;
 }
-
-const container = document.getElementById("user");
-const cpu = document.getElementById("computer");
-const BOATS = 9;
-
-container.style.pointerEvents = "none";
-
-var campo = [], cpuCampo = [];
-var hits, cpuHits;
-var cpuBoats = 9, userBoats = 9;
-
-cleanup();
 
 function startGame(event){
 
@@ -107,9 +109,9 @@ function startGame(event){
 }
 
 function setUserBoat(e){
-    var line = e.target.dataset.line;
-    var column = e.target.dataset.column;
-    var target = e.target;
+    let line = e.target.dataset.line;
+    let column = e.target.dataset.column;
+    let target = e.target;
 
     if(campo[line][column] === 0){
         userBoats--;
@@ -177,10 +179,10 @@ function shot(event) {
 }
 
 function cpuPlay(){
-    var line = Math.floor(Math.random()*10);
-    var column = Math.floor(Math.random()*10);
+    let line = Math.floor(Math.random()*10);
+    let column = Math.floor(Math.random()*10);
 
-    var target = document.getElementById('cpu'+line+column);
+    let target = document.getElementById('cpu'+line+column);
 
     switch (campo[line][column]){
         case 0:
@@ -200,9 +202,9 @@ function cpuPlay(){
 }
 
 function play(campo, event) {
-    var line = event.target.dataset.line;
-    var column = event.target.dataset.column;
-    var target = event.target;
+    let line = event.target.dataset.line;
+    let column = event.target.dataset.column;
+    let target = event.target;
 
     switch(cpuCampo[line][column]){
         case 0:
@@ -223,6 +225,3 @@ function play(campo, event) {
             window.alert("Pare de desperdiçar torpedos soldado");
     }
 }
-
-
-

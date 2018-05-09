@@ -15,6 +15,7 @@ button {
 
 }
 body{
+    /*noinspection CssUnknownTarget*/
     background-image: url("https://c.wallhere.com/photos/26/6e/1500x999_px_sea_ship_war-518719.jpg!d");
     background-size: 1900px;
 }
