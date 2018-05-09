@@ -20,6 +20,19 @@ function cleanup(){
     cpu.className = 'container';
     cpu.style.pointerEvents = 'none';
 
+    cpuCampo = [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ];
+
     generateCpuBoats();
 
     for(let count = 0; count < 10; count++){
@@ -53,7 +66,6 @@ function cleanup(){
 
 function generateCpuBoats(){
     for(let i = 0; i < 10; i++){
-        cpuCampo[i] = [];
         for(let j = 0; j < 10; j++){
 
             if (cpuCampo[i][j] !== 1) cpuCampo[i][j] = randomBoat(); //pode cair barco duas vezes no mesmo lugar
@@ -68,7 +80,7 @@ function randomBoat(){
 
     var rand = Math.random();
 
-    if(rand > 0.9){
+    if(rand > 0.95){
         cpuBoats--;
         return 1;
     }else return 0;
@@ -173,12 +185,10 @@ function cpuPlay(){
     switch (campo[line][column]){
         case 0:
             target.setAttribute("class", "shotWater");
-            target.innerHTML = "O";
             campo[line][column] = 2;
             break;
         case 1:
             target.setAttribute("class", "shotBoat");
-            target.innerHTML = "X";
             campo[line][column] = 3;
 
             cpuHits++;
@@ -197,14 +207,12 @@ function play(campo, event) {
     switch(cpuCampo[line][column]){
         case 0:
             target.setAttribute("class", "shotWaterSelf");
-            target.innerHTML = "O";
             cpuCampo[line][column] = 2;
             cpuPlay();
             break;
 
         case 1:
             target.setAttribute("class", "shotBoatSelf");
-            target.innerHTML = "X";
             cpuCampo[line][column] = 3;
 
             hits++;
