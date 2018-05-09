@@ -178,6 +178,11 @@ function shot(event) {
     }
 }
 
+function explosion(){
+	var audio = new Audio('long-explosion.mp3');
+	audio.play();
+}
+
 function cpuPlay(){
     let line = Math.floor(Math.random()*10);
     let column = Math.floor(Math.random()*10);
@@ -191,6 +196,7 @@ function cpuPlay(){
             break;
         case 1:
             target.setAttribute("class", "shotBoat");
+			explosion();
             campo[line][column] = 3;
 
             cpuHits++;
@@ -215,6 +221,7 @@ function play(campo, event) {
 
         case 1:
             target.setAttribute("class", "shotBoatSelf");
+			explosion();
             cpuCampo[line][column] = 3;
 
             hits++;
