@@ -179,8 +179,9 @@ function shot(event) {
 }
 
 function explosion(){
-	var audio = new Audio('long-explosion.mp3');
-	audio.play();
+	let audio = new Audio('long-explosion.mp3');
+	// noinspection JSIgnoredPromiseFromCall
+    audio.play();
 }
 
 function cpuPlay(){
