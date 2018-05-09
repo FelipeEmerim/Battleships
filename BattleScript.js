@@ -55,7 +55,8 @@ function generateCpuBoats(){
     for(let i = 0; i < 10; i++){
         cpuCampo[i] = [];
         for(let j = 0; j < 10; j++){
-            cpuCampo[i][j] = randomBoat();
+
+            if (cpuCampo[i][j] !== 1) cpuCampo[i][j] = randomBoat(); //pode cair barco duas vezes no mesmo lugar
         }
     }
 
@@ -214,3 +215,6 @@ function play(campo, event) {
             window.alert("Pare de desperdiçar torpedos soldado");
     }
 }
+
+
+
