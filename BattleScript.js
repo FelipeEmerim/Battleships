@@ -7,7 +7,10 @@
 // 2 para tiro na água
 // 3 tiro em um barco
 
-
+const myAudio = new Audio('background.mp3');
+myAudio.volume = 0.4;
+myAudio.loop = true;
+myAudio.play();
 const container = document.getElementById("user");
 const cpu = document.getElementById("computer");
 const BOATS = 9;
@@ -17,6 +20,7 @@ container.style.pointerEvents = "none";
 let campo = [], cpuCampo = [];
 let hits, cpuHits;
 let cpuBoats = 9, userBoats = 9;
+
 
 cleanup();
 
