@@ -10,7 +10,7 @@ button {
     cursor: pointer;
 }
 .self{
-    border: 5px solid tomato;
+    border: 6px solid red;
     border-radius: 10px;
 
 }
